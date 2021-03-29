@@ -10,7 +10,9 @@ namespace PyS.RFID.Web.Api.Models
         public string EPC { get; set; }
         public string ModuloId { get; set; }
         public string ModuloRol { get; set; }
-        public int Total { get; set; }
+        public int Lecturas { get; set; }
+        public string Local { get; set; }
+        public string Empresa { get; set; }
         public DateTime UltimaLectura { get; set; }
     }
 }
