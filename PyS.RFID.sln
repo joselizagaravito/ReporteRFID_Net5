@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31105.61
+VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyS.RFID.Web.Api", "PyS.RFID.Web.Api\PyS.RFID.Web.Api.csproj", "{068A8A42-8E68-4A30-81C1-3316DFCFD0EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyS.RFID.APIRest", "PyS.RFID.APIRest\PyS.RFID.APIRest.csproj", "{63C6B961-6F18-4C1C-A24A-2E39DA6130D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{068A8A42-8E68-4A30-81C1-3316DFCFD0EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{068A8A42-8E68-4A30-81C1-3316DFCFD0EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{068A8A42-8E68-4A30-81C1-3316DFCFD0EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{068A8A42-8E68-4A30-81C1-3316DFCFD0EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C6B961-6F18-4C1C-A24A-2E39DA6130D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C6B961-6F18-4C1C-A24A-2E39DA6130D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C6B961-6F18-4C1C-A24A-2E39DA6130D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C6B961-6F18-4C1C-A24A-2E39DA6130D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {285836CA-E3E1-4315-A752-CB3187380FBB}
+		SolutionGuid = {852FB829-335C-499C-9A5B-6B5209028845}
 	EndGlobalSection
 EndGlobal
