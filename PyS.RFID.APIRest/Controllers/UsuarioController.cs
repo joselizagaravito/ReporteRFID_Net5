@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PyS.RFID.APIRest.Context;
 using PyS.RFID.APIRest.DTOs;
 using PyS.RFID.APIRest.Interfaces;
 using PyS.RFID.APIRest.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -24,12 +23,19 @@ namespace PyS.RFID.APIRest.Controllers
             this.context = context;
             this.tokenService = tokenService;
         }
+
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Usuario>>> Get()
         {
-            List<Usuario> lista = context.Usuarios.ToList();
-            await context.SaveChangesAsync();
-            return lista;
+            return await context.Usuarios.ToListAsync();
+        }
+
+        [Authorize]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Usuario>> GetUser(int id)
+        {
+            return await context.Usuarios.FindAsync(id);
         }
 
         [HttpPost("register")]
@@ -102,6 +108,6 @@ namespace PyS.RFID.APIRest.Controllers
         {
             return await context.Usuarios.AnyAsync(x => x.UserName == username.ToLower());
         }
-
+        
     }
 }
