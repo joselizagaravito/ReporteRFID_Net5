@@ -5573,11 +5573,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Mis Documentos\\PedroClavijo\\WebRFID\\PyS.RFID\\PyS.RFID\\PyS.RFID.APIRest\\PyS.RFID.APIRest.csproj",
+      "projectUniqueName": "C:\\Mis Documentos\\PedroClavijo\\ReporteRFID_Net5\\PyS.RFID.APIRest\\PyS.RFID.APIRest.csproj",
       "projectName": "PyS.RFID.APIRest",
-      "projectPath": "C:\\Mis Documentos\\PedroClavijo\\WebRFID\\PyS.RFID\\PyS.RFID\\PyS.RFID.APIRest\\PyS.RFID.APIRest.csproj",
+      "projectPath": "C:\\Mis Documentos\\PedroClavijo\\ReporteRFID_Net5\\PyS.RFID.APIRest\\PyS.RFID.APIRest.csproj",
       "packagesPath": "C:\\Users\\herna\\.nuget\\packages\\",
-      "outputPath": "C:\\Mis Documentos\\PedroClavijo\\WebRFID\\PyS.RFID\\PyS.RFID\\PyS.RFID.APIRest\\obj\\",
+      "outputPath": "C:\\Mis Documentos\\PedroClavijo\\ReporteRFID_Net5\\PyS.RFID.APIRest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\herna\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5651,7 +5651,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

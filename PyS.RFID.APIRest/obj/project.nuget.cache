@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G54NMILkVijf5fpMrF+hocne8QmK0tXHH1fniQV7Ec9VFUNebl0RgskN6+FeCmaBVMKGq4wuUYRwNa4VGW6ycQ==",
+  "dgSpecHash": "sUp6Y7hjv+leDM3af03a9mrlTY9t9PbiCsWv/rKcw9GPmzZXJFKfFq27cIwSvRN6XPk24nOhsYmKGy4szW3kJA==",
   "success": true,
-  "projectFilePath": "C:\\Mis Documentos\\PedroClavijo\\WebRFID\\PyS.RFID\\PyS.RFID\\PyS.RFID.APIRest\\PyS.RFID.APIRest.csproj",
+  "projectFilePath": "C:\\Mis Documentos\\PedroClavijo\\ReporteRFID_Net5\\PyS.RFID.APIRest\\PyS.RFID.APIRest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\herna\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\herna\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.5\\microsoft.aspnetcore.authentication.jwtbearer.5.0.5.nupkg.sha512",
