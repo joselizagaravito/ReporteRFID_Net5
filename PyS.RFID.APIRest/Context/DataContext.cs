@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PyS.RFID.APIRest.DTOs;
 using PyS.RFID.APIRest.Models;
 
 #nullable disable
@@ -15,7 +16,7 @@ namespace PyS.RFID.APIRest.Context
             : base(options)
         {
         }
-
+        public virtual DbSet<LecturasTagDto> LecturasTagDtos{ get; set; }
         public virtual DbSet<Articulo> Articulos { get; set; }
         public virtual DbSet<Empresa> Empresas { get; set; }
         public virtual DbSet<Local> Locals { get; set; }
