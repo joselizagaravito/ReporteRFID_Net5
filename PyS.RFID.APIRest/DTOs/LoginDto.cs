@@ -11,5 +11,6 @@ namespace PyS.RFID.APIRest.DTOs
         public string UserName { get; set; }
        
         public string Password { get; set; }
+
     }
 }

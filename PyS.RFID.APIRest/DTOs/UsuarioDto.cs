@@ -11,6 +11,9 @@
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public string Direccion { get; set; }
+        public int? EmpresaId { get; set; }
+        public string EmpresaNombre { get; set; }
+        public int Ruc { get; set; }
         public string UserName { get; set; }
         public string Token { get; set; }
 

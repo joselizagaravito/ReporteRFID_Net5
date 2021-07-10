@@ -76,6 +76,7 @@ namespace PyS.RFID.APIRest.Controllers
                 Telefono = user.Telefono,
                 Celular = user.Celular,
                 Direccion = user.Direccion,
+                EmpresaId = user.EmpresaId,
                 UserName = user.UserName.ToLower(),
                 Token = tokenService.CreateToke(user)
             };
@@ -87,6 +88,7 @@ namespace PyS.RFID.APIRest.Controllers
             Usuario user = await context.Usuarios
                 .SingleOrDefaultAsync(a => a.UserName == loginDto.UserName);
 
+            
             if (user == null) return Unauthorized("Usuario Invalido");
 
             using var hmac = new HMACSHA512(user.PasswordSalt);
@@ -102,6 +104,7 @@ namespace PyS.RFID.APIRest.Controllers
             return new UsuarioDto
             {
                 UserName = user.UserName,
+                EmpresaId = user.EmpresaId,
                 Token = tokenService.CreateToke(user)
             };
         }
@@ -131,14 +134,25 @@ namespace PyS.RFID.APIRest.Controllers
         }
         [Authorize]
         [HttpPost("LecturasAlertadasPorDia")]
-        public async Task<ActionResult<List<LecturasTagDto>>> LecturasAlertadasPorDia(string Fecha, string Ruc)
+        public async Task<ActionResult<List<LecturasTagDto>>> LecturasAlertadasPorDia(ParametrosDto parametrosAlertados)
         {
             List<LecturasTagDto> results = new List<LecturasTagDto>();
             using (DataContext context = new DataContext())
             {
-                results = await context.Set<LecturasTagDto>().FromSqlRaw($"EXECUTE usp_LecturasAlertadasPorDia  @FECHA = '{Fecha}', @RUC = '{Ruc}'").ToListAsync();
+                results = await context.Set<LecturasTagDto>().FromSqlRaw($"EXECUTE usp_LecturasAlertadasPorDia  @FECHA = '{parametrosAlertados.Fecha}', @RUC = '{parametrosAlertados.Ruc}'").ToListAsync();
             }
             return results;
         }
+        //[Authorize]
+        //[HttpPost("LecturasAlertadasPorDia")]
+        //public async Task<ActionResult<List<LecturasTagDto>>> LecturasAlertadasPorDia(string Fecha, string Ruc)
+        //{
+        //    List<LecturasTagDto> results = new List<LecturasTagDto>();
+        //    using (DataContext context = new DataContext())
+        //    {
+        //        results = await context.Set<LecturasTagDto>().FromSqlRaw($"EXECUTE usp_LecturasAlertadasPorDia  @FECHA = '{Fecha}', @RUC = '{Ruc}'").ToListAsync();
+        //    }
+        //    return results;
+        //}
     }
 }

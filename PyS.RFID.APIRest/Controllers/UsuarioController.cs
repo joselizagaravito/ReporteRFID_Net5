@@ -97,11 +97,25 @@ namespace PyS.RFID.APIRest.Controllers
                 if (computeHash[i] != user.PasswordHash[i])
                     return Unauthorized("Password No valido");
             }
+            EmpresaUsuario results = new EmpresaUsuario();
+            using (DataContext context = new DataContext())
+            {
+                try
+                {
+                    results = await context.Set<EmpresaUsuario>().FromSqlRaw($"EXECUTE usp_Empresa_Select_by_Usuario  @UserName = '{user.UserName}'").SingleOrDefaultAsync();
+                }
+                catch (System.Exception )
+                {
 
+                    throw   ;
+                }
+            }
             return new UsuarioDto
             {
                 UserName = user.UserName,
-                Token = tokenService.CreateToke(user)
+                Token = tokenService.CreateToke(user),
+                EmpresaNombre = results.EmpresaNombre,
+                Ruc= results.RUC
             };
         }
         private async Task<bool> UserExist(string username)
