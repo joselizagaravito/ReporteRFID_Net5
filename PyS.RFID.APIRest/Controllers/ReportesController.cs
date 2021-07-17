@@ -76,7 +76,6 @@ namespace PyS.RFID.APIRest.Controllers
                 Telefono = user.Telefono,
                 Celular = user.Celular,
                 Direccion = user.Direccion,
-                EmpresaId = user.EmpresaId,
                 UserName = user.UserName.ToLower(),
                 Token = tokenService.CreateToke(user)
             };
@@ -104,7 +103,6 @@ namespace PyS.RFID.APIRest.Controllers
             return new UsuarioDto
             {
                 UserName = user.UserName,
-                EmpresaId = user.EmpresaId,
                 Token = tokenService.CreateToke(user)
             };
         }

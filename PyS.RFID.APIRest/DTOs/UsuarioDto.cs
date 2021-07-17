@@ -1,4 +1,6 @@
-﻿namespace PyS.RFID.APIRest.DTOs
+﻿using System.Collections.Generic;
+
+namespace PyS.RFID.APIRest.DTOs
 {
     public class UsuarioDto
     {
@@ -13,7 +15,7 @@
         public string Direccion { get; set; }
         public int? EmpresaId { get; set; }
         public string EmpresaNombre { get; set; }
-        public int Ruc { get; set; }
+        public string Ruc { get; set; }
         public string UserName { get; set; }
         public string Token { get; set; }
 

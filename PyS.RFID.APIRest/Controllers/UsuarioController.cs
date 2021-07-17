@@ -6,6 +6,7 @@ using PyS.RFID.APIRest.DTOs;
 using PyS.RFID.APIRest.Interfaces;
 using PyS.RFID.APIRest.Models;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -17,6 +18,7 @@ namespace PyS.RFID.APIRest.Controllers
     {
         private readonly DataContext context;
         private readonly ITokenService tokenService;
+       
 
         public UsuarioController(DataContext context, ITokenService tokenService)
         {
@@ -64,6 +66,7 @@ namespace PyS.RFID.APIRest.Controllers
             context.Usuarios.Add(user);
 
             await context.SaveChangesAsync();
+
             return new UsuarioDto
             {
                 Nombre = user.Nombre,
@@ -76,7 +79,8 @@ namespace PyS.RFID.APIRest.Controllers
                 Celular = user.Celular,
                 Direccion = user.Direccion,
                 UserName = user.UserName.ToLower(),
-                Token = tokenService.CreateToke(user)
+                Token = tokenService.CreateToke(user),
+
             };
         }
 
@@ -97,31 +101,36 @@ namespace PyS.RFID.APIRest.Controllers
                 if (computeHash[i] != user.PasswordHash[i])
                     return Unauthorized("Password No valido");
             }
-            EmpresaUsuario results = new EmpresaUsuario();
+
+            EmpresaUsuario results = new  EmpresaUsuario();
             using (DataContext context = new DataContext())
             {
                 try
                 {
-                    results = await context.Set<EmpresaUsuario>().FromSqlRaw($"EXECUTE usp_Empresa_Select_by_Usuario  @UserName = '{user.UserName}'").SingleOrDefaultAsync();
+                    //results = await context.Set<EmpresaUsuario>().FromSqlRaw($"Exec usp_Empresa_Select_by_Usuario @UserName = '{user.UserName}'").ToListAsync();
+                    results =  context.Set<EmpresaUsuario>().FromSqlRaw($"EXECUTE usp_Empresa_Select_by_Usuario  @UserName = '{user.UserName}'").ToList().FirstOrDefault();
+                    
                 }
-                catch (System.Exception )
+                catch (System.Exception ex)
                 {
+                    throw;
 
-                    throw   ;
                 }
             }
-            return new UsuarioDto
+            UsuarioDto result = new UsuarioDto
             {
                 UserName = user.UserName,
                 Token = tokenService.CreateToke(user),
-                EmpresaNombre = results.EmpresaNombre,
-                Ruc= results.RUC
+                EmpresaNombre = results.Empresa,
+                Ruc = results.Ruc
             };
+            return result;
+
         }
         private async Task<bool> UserExist(string username)
         {
             return await context.Usuarios.AnyAsync(x => x.UserName == username.ToLower());
         }
-        
+
     }
 }
