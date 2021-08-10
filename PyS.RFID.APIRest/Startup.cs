@@ -51,7 +51,7 @@ namespace PyS.RFID.APIRest
 
             app.UseRouting();
 
-            app.UseCors(x=>x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200","http://localhost:4200"));
+            app.UseCors(x=>x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200","http://localhost:4200", "http://pedroclavijo-001-site2.dtempurl.com"));
 
             app.UseAuthentication();
 

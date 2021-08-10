@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("c39f42ea-7daf-49bd-90cd-ef195ca45c12")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("PyS.RFID.APIRest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
