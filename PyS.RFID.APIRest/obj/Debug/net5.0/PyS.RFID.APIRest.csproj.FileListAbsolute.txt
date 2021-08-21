@@ -180,3 +180,4 @@ C:\Users\rober\Desktop\PedroClavijo\ReporteRFID_Net5-main\ReporteRFID_Net5-main\
 C:\Users\rober\Desktop\PedroClavijo\ReporteRFID_Net5-main\ReporteRFID_Net5-main\PyS.RFID.APIRest\obj\Debug\net5.0\ref\PyS.RFID.APIRest.dll
 C:\Users\rober\Desktop\PedroClavijo\ReporteRFID_Net5-main\ReporteRFID_Net5-main\PyS.RFID.APIRest\obj\Debug\net5.0\PyS.RFID.APIRest.pdb
 C:\Users\rober\Desktop\PedroClavijo\ReporteRFID_Net5-main\ReporteRFID_Net5-main\PyS.RFID.APIRest\obj\Debug\net5.0\PyS.RFID.APIRest.genruntimeconfig.cache
+C:\Users\rober\Desktop\PedroClavijo\ReporteRFID_Net5-main\ReporteRFID_Net5-main\PyS.RFID.APIRest\obj\Debug\net5.0\PyS.RFID.APIRest.csprojAssemblyReference.cache

@@ -7,6 +7,7 @@ namespace PyS.RFID.APIRest.DTOs
 {
     public class ParametrosDto
     {
+        //public string EPC { get; set; }
         public string Fecha { get; set; }
         public string Ruc { get; set; }
     }

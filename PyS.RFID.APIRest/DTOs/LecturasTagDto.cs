@@ -10,6 +10,7 @@ namespace PyS.RFID.APIRest.DTOs
     {
         public Int64 Id { get; set; }
         public string EPC { get; set; }
+        public string Nombre { get; set; }
         public int ModuloId { get; set; }
         public string ModuloRol { get; set; }
         public int Lecturas { get; set; }
