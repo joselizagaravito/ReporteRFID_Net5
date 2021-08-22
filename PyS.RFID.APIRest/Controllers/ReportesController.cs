@@ -143,19 +143,18 @@ namespace PyS.RFID.APIRest.Controllers
         }
         [Authorize]
         [HttpPost("Seguimiento")]
-        public async Task<ActionResult<List<LecturasSeguimientos>>> Seguimiento(ParametroEPC parametrosEpc)
+        public async Task<ActionResult<List<LecturasSeguimientos>>> Seguimiento(ParametroEPC epc)
         {
             List<LecturasSeguimientos> results = new List<LecturasSeguimientos>();
             using (DataContext context = new DataContext())
             {
                 try
                 {
-                    results = await context.Set<LecturasSeguimientos>().FromSqlRaw($"EXECUTE GetReadTag  @EPC = '{parametrosEpc.EPC}'").ToListAsync();
+                    results = await context.Set<LecturasSeguimientos>().FromSqlRaw($"EXECUTE GetReadTag  @EPC = '{epc.EPC}'").ToListAsync();
                 }
                 catch (System.Exception ex)
                 {
-
-                    parametrosEpc.EPC = ex.Message;
+                    epc.EPC = ex.Message;
                     throw;
                 }
             }

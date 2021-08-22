@@ -87,7 +87,7 @@ namespace PyS.RFID.APIRest.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<UsuarioDto>> Login(LoginDto loginDto)
         {
-            Usuario user = await context.Usuarios
+                Usuario user = await context.Usuarios
                 .SingleOrDefaultAsync(a => a.UserName == loginDto.UserName);
 
             if (user == null) return Unauthorized("Usuario Invalido");
