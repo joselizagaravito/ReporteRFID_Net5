@@ -20,18 +20,18 @@ namespace PyS.RFID.APIRest.Controllers
             this.context = context;
             this.tokenService = tokenService;
         }
-        //public ActionResult Get()
-        //{
+        public ActionResult Get()
+        {
 
-        //    try
-        //    {
-        //       // return Ok(context.Archivo.ToList());
-        //    }
-        //    catch (System.Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
+            try
+            {
+                // return Ok(context.Archivo.ToList());
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         [HttpPost]
         public ActionResult PostArchivos([FromForm] List<IFormFile> files)
         {
@@ -57,8 +57,8 @@ namespace PyS.RFID.APIRest.Controllers
                         archivo.Ubicacion = filePath;
                         archivos.Add(archivo);
                     }
-                    //context.Archivo.AddRange(archivos);
-                    //context.SaveChanges();
+                    context.Archivo.AddRange(archivos);
+                    context.SaveChanges();
                 }
             }
             catch (System.Exception ex)
