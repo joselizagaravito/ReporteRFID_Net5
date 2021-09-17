@@ -17,6 +17,7 @@ namespace PyS.RFID.APIRest.Context
         {
         }
 
+        public virtual DbSet<Archivo> Archivo { get; set; }
         public virtual DbSet<EmpresaUsuario> EmpresaUsuario { get; set; }
         public virtual DbSet<LecturasTagDto> LecturasTagDtos { get; set; }
         public virtual DbSet<LecturasSeguimientos> LecturasSeguimiento { get; set; }
